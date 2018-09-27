@@ -73,7 +73,7 @@ int main()
             insert_item(i);
             break;
         case 2:
-            cout<<endl<<"AT FRont "<<front();
+            cout<<endl<<"AT Front "<<front();
             break;
         case 3:
             cout<<endl<<"deleted item :"<<pop_item();

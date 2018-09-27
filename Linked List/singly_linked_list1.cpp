@@ -25,7 +25,7 @@ void insert_in_linked_list(node **head , int data, int position)
 {
     node* n1=new node();
     n1->data=data;
-    int k=0;
+    int k=1;
     node* ptr= *head;
 
     if(position ==1 ){
@@ -80,16 +80,21 @@ void delete_from_linked_list(node **head, int position)
         k++;
         prev=ptr;
         ptr=ptr-> next;
+    }
 
-        if(ptr == NULL)
-            cout<< " Position does not exist ";
-        else
+    if(ptr == NULL && position!= INF)
+        cout<< " Position does not exist ";
+    else
         {
-            prev->next=ptr->next;
-            delete(ptr);
+        prev->next=ptr->next;
+        delete(ptr);
         }
 
-    }
+}
+void delete_list()
+{
+
+
 }
 
 int main()
@@ -139,6 +144,9 @@ int main()
                 position = INF;
             delete_from_linked_list(&head,position);
             break;
+        case 5:
+            cout<<"\n  delete entire list";
+            delete_list();
         case 0:
             exit(0);
         }
