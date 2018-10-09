@@ -5,9 +5,14 @@
 
 using namespace std;
 
+
 int main()
 {
-	DONE
+
+	srand(time(NULL));
+	cout<<"the no is "<<rand()%100<<endl;
+	srand(9);
+	cout<<"the no is "<<rand()%100<<endl;
 	
 	return 0;
 }

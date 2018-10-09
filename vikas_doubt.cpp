@@ -7,7 +7,13 @@ using namespace std;
 
 int main()
 {
-	DONE
+	DONE;
+
+	for(ll i=1;i<100000001;i++)
+	{
+		if(i%100000000==0)
+			cout<<i;
+	}
 	
 	return 0;
 }

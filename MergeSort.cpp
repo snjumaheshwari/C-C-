@@ -6,6 +6,40 @@
 using namespace std;
 
 
+void merge2(int *a, int start, int end)
+{
+	int mid=(start+end)/2;
+
+	int i=start;
+	int j=mid+1;
+	int k=start;
+
+	int temp[1000];
+
+	while(i<=mid && j<=end)
+	{
+		if(a[i]< a[j])
+			temp[k++]=a[i++];
+		else
+			temp[k++]=a[j++];
+	}
+	while(i<=mid)
+	{
+		temp[k++]=a[i++];
+	}
+	while(j<=end)
+	{
+		temp[k++]=a[j++];
+	}
+
+	for(int i=start;i<=end;i++)
+	{
+		a[i]=temp[i];
+	}
+
+
+}
+
 void merge(int* arr, int start, int mid , int end)
 {
 	int n1=mid-start+1;
@@ -21,36 +55,20 @@ void merge(int* arr, int start, int mid , int end)
 
 	int i=0,j=0;
 	int k=start;
-	
+
 	while(i<n1 && j< n2)
 	{
 		if(L[i]<=R[j])
-		{
-			arr[k]=L[i];
-			k++;
-			i++;
-		}
+			arr[k++]=L[i++];
 		else
-		{
-			arr[k]=R[j];
-			k++;
-			j++;
-		}
+			arr[k++]=R[j++];
 	}
 
 	while(i<n1)
-	{
-		arr[k]=L[i];
-		k++;
-		i++;
-	}
+		arr[k++]=L[i++];
 
 	while(j<n2)
-	{
-		arr[k]=R[j];
-		k++;
-		j++;
-	}
+		arr[k++]=R[j++];
 }
 
 void mergeSort(int *arr,int start, int end)

@@ -12,7 +12,7 @@ struct node *TOS=NULL;
 
 void push(int data)
 {
-     node *temp=new node;
+    node *temp=new node;
     temp->data=item;
     temp->link=NULL;
 
