@@ -18,7 +18,7 @@ int main()
 		int count_bits=0;
 		while(m!=0)
 		{
-			n=n>>1;
+			m=m>>1;
 			count_bits++;
 		}
 

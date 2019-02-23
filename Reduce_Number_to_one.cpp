@@ -6,15 +6,16 @@
 using namespace std;
 
 
-ll steps(int n)
+ll steps(ll n)
 {
 	ll dp[n+1];
+
 
 	dp[1]=0;
 	dp[2]=1;
 	dp[3]=1;
-
-	for(int i=4;i<=n;i++)
+/*
+	for(ll i=4;i<=n;i++)
 	{
 			if(i%3==0 && i%2==0)
 			{
@@ -23,7 +24,7 @@ ll steps(int n)
 			}
 			else if(i%3==0)
 			{
-				dp[i]=1+min(dp[i-1],dp[i%3]);
+				dp[i]=1+min(dp[i-1],dp[i/3]);
 			}
 			else if(i%2==0)
 			{
@@ -35,6 +36,7 @@ ll steps(int n)
 			}
 
 	}
+	*/
 	return dp[n];
 			
 }
@@ -43,13 +45,17 @@ ll steps(int n)
 
 int main()
 {
-	DONE;
+	//DONE;
 
-	int n;
-	cin>>n;
+	int t; cin>>t;
+	for(int i=1;i<=t;i++)
+	{
+		ll n;
+		cin>>n;
 
-	ll ans=steps(n);
-	cout<<ans;
+		//ll ans=steps(n);
+		cout<<"Case "<<i<<": "<<ans<<endl;
+	}
 	
 	return 0;
 }

@@ -40,7 +40,7 @@ int maxknight(int n ,int r=0,int c=0)
 	if(r>n || c>n)
 		return 0;
 
-	return 1+ max([maxknight(n,r-2,c-2), maxknight(n,r-2,c+1),
+	return 1+ max([maxknight(n,r-2,c-1), maxknight(n,r-2,c+1),
 				maxknight(n,r-1,c-2), maxknight(n,r-1,c+2),
 				maxknight(n,r+1,c-2), maxknight(r+1,c+2),
 				maxknight(n,r+2,c-1), maxknight(n,r+2,c+1)],8) ;
