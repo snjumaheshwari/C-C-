@@ -45,6 +45,7 @@ int main(){
             ans+=x*i;
         }
         cout<<ans<<endl;
+
   }
 
   return 0;

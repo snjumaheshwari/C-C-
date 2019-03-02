@@ -40,6 +40,8 @@ void merge2(int *a, int start, int end)
 
 }
 
+
+long long cnt=0;
 void merge(int* arr, int start, int mid , int end)
 {
 	int n1=mid-start+1;
@@ -60,8 +62,10 @@ void merge(int* arr, int start, int mid , int end)
 	{
 		if(L[i]<=R[j])
 			arr[k++]=L[i++];
-		else
+		else{
 			arr[k++]=R[j++];
+			cnt+= ( n1-i);
+		}
 	}
 
 	while(i<n1)
@@ -88,14 +92,23 @@ int main()
 {
 	DONE;
 
-	int arr[]={ 1,4,2,6,12,54,21,7,8,3};
-	int n=sizeof(arr)/sizeof(int);
+	freopen("in.txt","r",stdin);
+
+	int n; cin>>n;
+
+	int arr[n];
+	for(int i=0;i<n;i++){
+		cin>>arr[i];
+	}
+
+	
 
 	mergeSort(arr,0,n-1);
 
 	for(int i=0;i<n;i++)
 		cout<<arr[i]<<" ";
 
+	cout<<cnt<<endl;
 	
 	return 0;
 }
